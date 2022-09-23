@@ -1,0 +1,89 @@
+File Name: C:/Users/Arne_Andersson/OneDrive - Lund University/minidatalogger/Projects/2021/Batch_5_2021_RUBIN_KINA/5D7/X5D7_2022-08-09.log
+BMP280 calib data: [27207, 25477, 50, 38427, -10667, 3024, 9244, -214, -7, 15500, -14600, 6000]
+
+Pressure/Altitude parameters:
+Lapse rate: -0.0065 deg/min
+Spec. gas constant: 287.058 J/kg*K
+Acc due to grav. (g): 9.82
+Temp at sea level: 288.15 K
+Pressure at sea level: 1013 hPa
+
+STATUS_REV: 0x6
+MEMORY_TYPE: CY15B104QC
+ACC_START_ADDR: 0x004C00
+ADDR_ACC_POINTER: 0x00D2CC
+LIGHT_START_ADDR: 0x000700
+ADDR_LIGHT_POINTER: 0x000994
+PRESS_START_ADDR: 0x000C00
+ADDR_PRESS_POINTER: 0x00492C
+PRESS_SCHED_START_ADDR: 0x000600
+ADDR_PRESS_SCHED_POINTER: 0x000600
+Press schedule ID: 0x005C
+LIGHT_SCHED_START_ADDR: 0x000500
+ADDR_LIGHT_SCHED_POINTER: 0x000500
+Light schedule ID: 0x005C
+DEBUG_INFO_START_ADDR: 0x000100
+ADDR_DEBUG_INFO_POINTER: 0x000130
+REBOOT_COUNT: 0
+HW revision: 5.0
+SW revision: 6.0
+Device ID: 0x05D7
+Start date:2021-03-26 16:30:00
+Activation date:2021-08-15 00:00:00
+RTC date:2022-08-09 10:40:26
+debug options: 0x0000
+param options: 0x0028
+Sequence counter: 0x07E5F4
+Light sequence counter: 10
+Pressure sequence counter: 2
+STATUS_DEBUG_START_ADDR: 0x000100
+ADDR_DEBUG_INFO_POINTER: 0x000130
+
+ERRORS:
+Time			Seq.cnt		Msg.	Device.	Info.
+2021-08-15 00:00:00	0x0000	0x0000	unknown
+2022-05-05 06:00:00	0x5C8C8	0x00EC	RTC time and sequence counter is different
+2022-05-06 00:40:00	0x5CD28	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-06 03:20:00	0x5CDC8	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-16 05:40:00	0x60694	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-16 11:20:00	0x607E8	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-16 11:30:00	0x607F2	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-16 12:00:00	0x60810	0x0010	RTC time and sequence counter is different
+
+
+Light schedule:
+Start			Stop
+2021-12-21 23:00:00	2021-12-22 04:00:00
+2021-12-22 08:00:00	2021-12-22 13:00:00
+2021-12-22 23:00:00	2021-12-23 04:00:00
+2021-12-23 08:00:00	2021-12-23 13:00:00
+2021-12-23 23:00:00	2021-12-24 04:00:00
+2021-12-24 08:00:00	2021-12-24 13:00:00
+2021-12-24 23:00:00	2021-12-25 04:00:00
+2021-12-25 08:00:00	2021-12-25 13:00:00
+2021-12-25 23:00:00	2021-12-26 04:00:00
+2021-12-26 08:00:00	2021-12-26 13:00:00
+
+Pressure schedule:
+Start			Stop
+2021-08-15 01:00:00	2022-03-15 00:00:00
+2022-03-15 00:00:00	2022-05-20 00:00:00
+
+Restarts & Accelerometer errors:
+Total number of accelerometer errors: 0
+
+Light start; Planned:	 Actual:
+2021-12-21 23:00:00	2021-12-21 23:00:00
+2021-12-22 08:00:00	2021-12-22 08:00:00
+2021-12-22 23:00:00	2021-12-22 23:00:00
+2021-12-23 08:00:00	2021-12-23 08:00:00
+2021-12-23 23:00:00	2021-12-23 23:00:00
+2021-12-24 08:00:00	2021-12-24 08:00:00
+2021-12-24 23:00:00	2021-12-24 23:00:00
+2021-12-25 08:00:00	2021-12-25 08:00:00
+2021-12-25 23:00:00	2021-12-25 23:00:00
+2021-12-26 08:00:00	2021-12-26 08:00:00
+
+Press start; Planned:	 Actual:
+2021-08-15 01:00:00	2021-08-15 01:00:19
+2022-03-15 00:00:00	2022-03-15 00:00:00
