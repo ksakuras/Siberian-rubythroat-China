@@ -13,42 +13,14 @@ library(readxl)
 debug <- T
 
 # Define the geolocator data logger id to use
-gdl <- "18LX"
+gdl <- "5D6"
 
 # Read its information from gpr_settings.xlsx
 gpr <- read_excel("data/gpr_settings.xlsx") %>%
   filter(gdl_id == gdl)
 
-# Read, classify and label ----
-if (debug) {
-  # Use this figure to determine crop and calib period. You can then use it again to check that they are correct.
-  pam_no_crop <- pam_read(paste0("data/0_PAM/", gpr$gdl_id))
-
-  p <- ggplot()
-  if (!is.na(gpr$calib_1_start)&!is.na(gpr$calib_1_end)){
-    p <- p + geom_rect(aes(xmin = gpr$calib_1_start, xmax = gpr$calib_1_end, ymin=min(pam_no_crop$pressure$obs), ymax=max(pam_no_crop$pressure$obs)), fill="grey")
-  }
-  if (!is.na(gpr$calib_2_start)&!is.na(gpr$calib_2_end)){
-    p <- p + geom_rect(aes(xmin = gpr$calib_2_start, xmax = gpr$calib_2_end, ymin=min(pam_no_crop$pressure$obs), ymax=max(pam_no_crop$pressure$obs)), fill="grey")
-  }
-  p <- p + geom_line(data = pam_no_crop$pressure, aes(x = date, y = obs), col = "black")
-  if (!is.na(gpr$crop_start)){
-    p <- p + geom_vline(xintercept = gpr$crop_start, color = "green", lwd = 1)
-  }
-  if (!is.na(gpr$crop_end)){
-    p <- p + geom_vline(xintercept = gpr$crop_end, color = "red", lwd = 1)
-  }
-  p <- p +
-    theme_bw() +
-    scale_y_continuous(name = "Pressure (hPa)")
-
-  ggplotly(p, dynamicTicks = T) %>% layout(showlegend = F)
-}
-
-pam <- pam_read(paste0("data/0_PAM/", gpr$gdl_id),
-  crop_start = gpr$crop_start,
-  crop_end = gpr$crop_end
-)
+# Run prepartion to load pam data
+source("analysis/0-preparation.R")
 
 # Auto classification + writing, only done the first time
 if (!file.exists(paste0("data/1_pressure/labels/", gpr$gdl_id, "_act_pres-labeled.csv"))) {
