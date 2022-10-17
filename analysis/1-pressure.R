@@ -19,8 +19,36 @@ gdl <- "5D6"
 gpr <- read_excel("data/gpr_settings.xlsx") %>%
   filter(gdl_id == gdl)
 
-# Run prepartion to load pam data
-source("analysis/0-preparation.R")
+# Read, classify and label ----
+if (debug) {
+  # Use this figure to determine crop and calib period. You can then use it again to check that they are correct.
+  pam_no_crop <- pam_read(paste0("data/0_PAM/", gpr$gdl_id))
+
+  p <- ggplot()
+  if (!is.na(gpr$calib_1_start)&!is.na(gpr$calib_1_end)){
+    p <- p + geom_rect(aes(xmin = gpr$calib_1_start, xmax = gpr$calib_1_end, ymin=min(pam_no_crop$pressure$obs), ymax=max(pam_no_crop$pressure$obs)), fill="grey")
+  }
+  if (!is.na(gpr$calib_2_start)&!is.na(gpr$calib_2_end)){
+    p <- p + geom_rect(aes(xmin = gpr$calib_2_start, xmax = gpr$calib_2_end, ymin=min(pam_no_crop$pressure$obs), ymax=max(pam_no_crop$pressure$obs)), fill="grey")
+  }
+  p <- p + geom_line(data = pam_no_crop$pressure, aes(x = date, y = obs), col = "black")
+  if (!is.na(gpr$crop_start)){
+    p <- p + geom_vline(xintercept = gpr$crop_start, color = "green", lwd = 1)
+  }
+  if (!is.na(gpr$crop_end)){
+    p <- p + geom_vline(xintercept = gpr$crop_end, color = "red", lwd = 1)
+  }
+  p <- p +
+    theme_bw() +
+    scale_y_continuous(name = "Pressure (hPa)")
+
+  ggplotly(p, dynamicTicks = T) %>% layout(showlegend = F)
+}
+
+pam <- pam_read(paste0("data/0_PAM/", gpr$gdl_id),
+  crop_start = gpr$crop_start,
+  crop_end = gpr$crop_end
+)
 
 # Auto classification + writing, only done the first time
 if (!file.exists(paste0("data/1_pressure/labels/", gpr$gdl_id, "_act_pres-labeled.csv"))) {
@@ -74,6 +102,7 @@ if (debug) {
 # Filter stationary period based on the number of pressure datapoint available
 thr_dur <- gpr$thr_dur # 24*4 # duration in hour. Decrease this value down to gpr$thr_dur
 res <- as.numeric(difftime(pam$pressure$date[2], pam$pressure$date[1], units = "hours"))
+
 sta_id_keep <- pam$pressure %>%
   filter(!isoutlier & sta_id > 0) %>%
   count(sta_id) %>%
@@ -99,6 +128,7 @@ pressure_prob <- geopressure_prob_map(pressure_maps,
   s = gpr$prob_map_s,
   thr = gpr$prob_map_thr
 )
+
 
 if (debug) {
   # Compute the path of the most likely position
