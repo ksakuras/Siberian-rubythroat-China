@@ -16,21 +16,18 @@ gdl <- "18LX"
 
 # Load the pressure file, also contains set, pam, col
 load(paste0("data/1_pressure/", gdl, "_pressure_prob.Rdata"))
-load(paste0("data/2_light/", gdl, "_light_prob.Rdata"))
 
 # Defint the threashold of the stationay period to consider
 thr_sta_dur <- gpr$thr_dur # in hours
 
 sta_pres <- unlist(lapply(pressure_prob, function(x) raster::metadata(x)$sta_id))
-sta_light <- unlist(lapply(light_prob, function(x) raster::metadata(x)$sta_id))
 sta_thres <- pam$sta$sta_id[difftime(pam$sta$end, pam$sta$start, units = "hours") > thr_sta_dur]
 
 # Get the sta_id present on all three data sources
-sta_id_keep <- intersect(intersect(sta_pres, sta_light), sta_thres)
+sta_id_keep <- intersect(sta_pres, sta_thres)
 
-# Filter pressure and light map
+# Filter pressure map
 pressure_prob <- pressure_prob[sta_pres %in% sta_id_keep]
-light_prob <- light_prob[sta_light %in% sta_id_keep]
 
 
 # Flight
@@ -48,9 +45,9 @@ flight[[i_f + 1]] <- list()
 
 
 # static prob
-static_prob <- mapply(function(light, pressure, flight) {
+static_prob <- mapply(function(pressure, flight) {
   # define static prob as the product of light and pressure prob
-  static_prob <- light * pressure
+  static_prob <- pressure
 
   # replace na by zero
   # tmp <- values(static_prob)
@@ -63,7 +60,7 @@ static_prob <- mapply(function(light, pressure, flight) {
 
   # return
   static_prob
-}, light_prob, pressure_prob, flight)
+}, pressure_prob, flight)
 
 
 
@@ -104,18 +101,12 @@ static_timeserie <- geopressure_ts_path(path, pam$pressure)
 
 if (debug) {
   # GeopressureViz
-  geopressureviz <- list(
+  geopressureviz(
     pam = pam,
     static_prob = static_prob,
     pressure_prob = pressure_prob,
-    light_prob = light_prob,
     pressure_timeserie = static_timeserie
   )
-  save(geopressureviz, file = "~/geopressureviz.RData")
-
-  appDir <- system.file("geopressureviz", package = "GeoPressureR")
-  shiny::runApp(appDir, launch.browser = getOption("browser"))
-
 
   # Check 1
   static_prob_n <- lapply(static_prob, function(x) {
