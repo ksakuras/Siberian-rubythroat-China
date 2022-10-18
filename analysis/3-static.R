@@ -21,7 +21,7 @@ gdl <- "5D6"
 load(paste0("data/1_pressure/", gdl, "_pressure_prob.Rdata"))
 
 # Defint the threashold of the stationary period to consider
-thr_sta_dur <- gpr$thr_dur # in hours
+thr_sta_dur <- 0# gpr$thr_dur # in hours
 
 sta_pres <- unlist(lapply(pressure_prob, function(x) raster::metadata(x)$sta_id))
 sta_thres <- pam$sta$sta_id[difftime(pam$sta$end, pam$sta$start, units = "hours") > thr_sta_dur]
@@ -75,14 +75,17 @@ lat <- lat[seq_len(length(lat) - 1)] + diff(lat[1:2]) / 2
 lon <- seq(raster::xmin(static_prob[[1]]), raster::xmax(static_prob[[1]]), length.out = ncol(static_prob[[1]]) + 1)
 lon <- lon[seq_len(length(lon) - 1)] + diff(lon[1:2]) / 2
 
-lon_calib_id <- which.min(abs(gpr$calib_lon - lon))
-lat_calib_id <- which.min(abs(gpr$calib_lat - lat))
 
-stopifnot(metadata(static_prob[[1]])$sta_id == 1)
-tmp <- as.matrix(static_prob[[1]])
-tmp[!is.na(tmp)] <- 0
-tmp[lat_calib_id, lon_calib_id] <- 1
-values(static_prob[[1]]) <- tmp
+if (!is.na(gpr$calib_1_start)) {
+  lon_calib_id <- which.min(abs(gpr$calib_lon - lon))
+  lat_calib_id <- which.min(abs(gpr$calib_lat - lat))
+
+  stopifnot(metadata(static_prob[[1]])$sta_id == 1)
+  tmp <- as.matrix(static_prob[[1]])
+  tmp[!is.na(tmp)] <- 0
+  tmp[lat_calib_id, lon_calib_id] <- 1
+  values(static_prob[[1]]) <- tmp
+}
 
 if (!is.na(gpr$calib_2_start)) {
   if (!is.na(gpr$calib_2_lat)) {
