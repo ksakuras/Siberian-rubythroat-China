@@ -1,0 +1,117 @@
+File Name: C:/Users/Arne_Andersson/OneDrive - Lund University/minidatalogger/Projects/2021/Batch_5_2021_RUBIN_KINA/5E7/X5E7_2022-08-10.log
+BMP280 calib data: [27653, 25587, 50, 37565, -10630, 3024, 5751, -61, -7, 15500, -14600, 6000]
+
+Pressure/Altitude parameters:
+Lapse rate: -0.0065 deg/min
+Spec. gas constant: 287.058 J/kg*K
+Acc due to grav. (g): 9.82
+Temp at sea level: 288.15 K
+Pressure at sea level: 1013 hPa
+
+STATUS_REV: 0x6
+MEMORY_TYPE: CY15B104QC
+ACC_START_ADDR: 0x004C00
+ADDR_ACC_POINTER: 0x00D324
+LIGHT_START_ADDR: 0x000700
+ADDR_LIGHT_POINTER: 0x000994
+PRESS_START_ADDR: 0x000C00
+ADDR_PRESS_POINTER: 0x00492C
+PRESS_SCHED_START_ADDR: 0x000600
+ADDR_PRESS_SCHED_POINTER: 0x000600
+Press schedule ID: 0x005C
+LIGHT_SCHED_START_ADDR: 0x000500
+ADDR_LIGHT_SCHED_POINTER: 0x000500
+Light schedule ID: 0x005C
+DEBUG_INFO_START_ADDR: 0x000100
+ADDR_DEBUG_INFO_POINTER: 0x0001D8
+REBOOT_COUNT: 0
+HW revision: 5.0
+SW revision: 6.0
+Device ID: 0x05E7
+Start date:2021-03-26 16:50:00
+Activation date:2021-08-15 00:00:00
+RTC date:2022-08-10 09:00:27
+debug options: 0x0000
+param options: 0x0028
+Sequence counter: 0x07EB1C
+Light sequence counter: 10
+Pressure sequence counter: 2
+STATUS_DEBUG_START_ADDR: 0x000100
+ADDR_DEBUG_INFO_POINTER: 0x0001D8
+
+ERRORS:
+Time			Seq.cnt		Msg.	Device.	Info.
+2022-04-20 14:30:00	0x57666	0x0007	RTC oscillator has stopped, timing unreliable
+2022-04-20 15:10:00	0x5768E	0x0007	RTC oscillator has stopped, timing unreliable
+2022-04-20 15:20:00	0x57698	0x0007	RTC oscillator has stopped, timing unreliable
+2022-04-20 15:40:00	0x576AC	0x0007	RTC oscillator has stopped, timing unreliable
+2022-04-20 15:50:00	0x576B6	0x0007	RTC oscillator has stopped, timing unreliable
+2022-04-20 16:00:00	0x576C0	0x0007	RTC oscillator has stopped, timing unreliable
+2022-04-20 16:10:00	0x576CA	0x0007	RTC oscillator has stopped, timing unreliable
+2022-04-20 16:20:00	0x576D4	0x0007	RTC oscillator has stopped, timing unreliable
+2022-04-20 16:50:00	0x576F2	0x0007	RTC oscillator has stopped, timing unreliable
+2022-04-20 17:00:00	0x576FC	0x0007	RTC oscillator has stopped, timing unreliable
+2022-04-20 17:20:00	0x57710	0x0007	RTC oscillator has stopped, timing unreliable
+2022-04-20 17:30:00	0x5771A	0x0007	RTC oscillator has stopped, timing unreliable
+2022-04-20 17:40:00	0x57724	0x0007	RTC oscillator has stopped, timing unreliable
+2022-04-20 17:50:00	0x5772E	0x0007	RTC oscillator has stopped, timing unreliable
+2022-04-20 18:00:00	0x57738	0x0007	RTC oscillator has stopped, timing unreliable
+2022-04-21 00:00:00	0x578A0	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-08 02:30:00	0x5D8D6	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-08 03:30:00	0x5D912	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-08 23:50:00	0x5DDD6	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-09 23:10:00	0x5E34E	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-11 03:30:00	0x5E9F2	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-11 23:50:00	0x5EEB6	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-12 07:50:00	0x5F096	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-15 00:50:00	0x5FFD2	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-15 04:30:00	0x600AE	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-15 22:00:00	0x604C8	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-16 02:40:00	0x605E0	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-17 22:50:00	0x6103A	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-18 00:40:00	0x610A8	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-19 09:20:00	0x61850	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-20 23:10:00	0x6212E	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-21 22:00:00	0x62688	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-24 23:00:00	0x637A4	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-25 02:20:00	0x6386C	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-29 23:00:00	0x653C4	0x0007	RTC oscillator has stopped, timing unreliable
+2022-05-30 09:10:00	0x65626	0x0007	RTC oscillator has stopped, timing unreliable
+
+
+Light schedule:
+Start			Stop
+2021-12-21 23:00:00	2021-12-22 04:00:00
+2021-12-22 08:00:00	2021-12-22 13:00:00
+2021-12-22 23:00:00	2021-12-23 04:00:00
+2021-12-23 08:00:00	2021-12-23 13:00:00
+2021-12-23 23:00:00	2021-12-24 04:00:00
+2021-12-24 08:00:00	2021-12-24 13:00:00
+2021-12-24 23:00:00	2021-12-25 04:00:00
+2021-12-25 08:00:00	2021-12-25 13:00:00
+2021-12-25 23:00:00	2021-12-26 04:00:00
+2021-12-26 08:00:00	2021-12-26 13:00:00
+
+Pressure schedule:
+Start			Stop
+2021-08-15 01:00:00	2022-03-15 00:00:00
+2022-03-15 00:00:00	2022-05-20 00:00:00
+
+Restarts & Accelerometer errors:
+Total number of accelerometer errors: 0
+
+Light start; Planned:	 Actual:
+2021-12-21 23:00:00	2021-12-21 23:00:00
+2021-12-22 08:00:00	2021-12-22 08:00:00
+2021-12-22 23:00:00	2021-12-22 23:00:00
+2021-12-23 08:00:00	2021-12-23 08:00:00
+2021-12-23 23:00:00	2021-12-23 23:00:00
+2021-12-24 08:00:00	2021-12-24 08:00:00
+2021-12-24 23:00:00	2021-12-24 23:00:00
+2021-12-25 08:00:00	2021-12-25 08:00:00
+2021-12-25 23:00:00	2021-12-25 23:00:00
+2021-12-26 08:00:00	2021-12-26 08:00:00
+
+Press start; Planned:	 Actual:
+2021-08-15 01:00:00	2021-08-15 01:00:19
+2022-03-15 00:00:00	2022-03-15 00:00:00
