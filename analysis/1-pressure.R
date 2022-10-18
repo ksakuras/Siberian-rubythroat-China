@@ -19,47 +19,40 @@ gdl <- "5D6"
 gpr <- read_excel("data/gpr_settings.xlsx") %>%
   filter(gdl_id == gdl)
 
-# Read, classify and label ----
-if (debug) {
-  # Use this figure to determine crop and calib period. You can then use it again to check that they are correct.
-  pam_no_crop <- pam_read(paste0("data/0_PAM/", gpr$gdl_id))
+raw <- read.csv(paste0("data/0_PAM/", "/", gdl, "_act_pres_temp.csv"))
 
-  p <- ggplot()
-  if (!is.na(gpr$calib_1_start)&!is.na(gpr$calib_1_end)){
-    p <- p + geom_rect(aes(xmin = gpr$calib_1_start, xmax = gpr$calib_1_end, ymin=min(pam_no_crop$pressure$obs), ymax=max(pam_no_crop$pressure$obs)), fill="grey")
-  }
-  if (!is.na(gpr$calib_2_start)&!is.na(gpr$calib_2_end)){
-    p <- p + geom_rect(aes(xmin = gpr$calib_2_start, xmax = gpr$calib_2_end, ymin=min(pam_no_crop$pressure$obs), ymax=max(pam_no_crop$pressure$obs)), fill="grey")
-  }
-  p <- p + geom_line(data = pam_no_crop$pressure, aes(x = date, y = obs), col = "black")
-  if (!is.na(gpr$crop_start)){
-    p <- p + geom_vline(xintercept = gpr$crop_start, color = "green", lwd = 1)
-  }
-  if (!is.na(gpr$crop_end)){
-    p <- p + geom_vline(xintercept = gpr$crop_end, color = "red", lwd = 1)
-  }
-  p <- p +
-    theme_bw() +
-    scale_y_continuous(name = "Pressure (hPa)")
-
-  ggplotly(p, dynamicTicks = T) %>% layout(showlegend = F)
+# change timestamp back to correct format
+raw$timestamp = as.POSIXct(raw$timestamp,tz = "GMT", format = c("%Y-%m-%d %H:%M:%S"))
+if (debug){
+  head(raw)
+  #CHECK whether it is GMT!
+  unique(raw$timestamp)
+  summary(raw)
+  str(raw)
 }
 
-pam <- pam_read(paste0("data/0_PAM/", gpr$gdl_id),
-  crop_start = gpr$crop_start,
-  crop_end = gpr$crop_end
-)
+# extract info
+pressure.mid = subset(raw, series == "pressure")
+acto.mid = subset(raw, series == "actoscore")
+temp.mid = subset(raw, series == "temperature")
 
-# Auto classification + writing, only done the first time
-if (!file.exists(paste0("data/1_pressure/labels/", gpr$gdl_id, "_act_pres-labeled.csv"))) {
-  pam <- pam_classify(pam)
-  trainset_write(pam, "data/1_pressure/labels/")
-  browseURL("https://trainset.geocene.com/")
-  invisible(readline(prompt = paste0(
-    "Edit the label file data/1_pressure/labels/", gpr$gdl_id,
-    "_act_pres.csv.\n Once you've exported ", gpr$gdl_id,
-    "_act_pres-labeled.csv, press [enter] to proceed"
-  )))
+# combine all information into pam variable
+pam <- list(length = 4)  #create a list variable
+pam$pressure <- data.frame(pressure.mid[,c(2,3)])  #copy the column 2-3 to the list
+pam$acceleration <- data.frame(acto.mid[,c(2,3)])
+pam$temperature <- data.frame(temp.mid[,c(2,3)])
+pam$light <- data.frame(acto.mid[,c(2,3)])   #create a list of light with acto schedule
+pam$light[,2] <- rep(0,length(pam$light[,2])) #force all data to 0 as we don't have light data
+names(pam) <- c("id","pressure","acceleration","temperature","light") #change "length" list to name "id"
+pam$id <- as.character("5D6")
+colnames(pam$pressure) <- c("date","obs")  #change column name for each list
+colnames(pam$acceleration) <- c("date","obs")
+colnames(pam$light) <- c("date","obs")
+colnames(pam$temperature) <- c("date","obs")
+
+if (debug){
+  summary(pam)
+  str(pam)
 }
 
 # Read the label and compute the stationary info

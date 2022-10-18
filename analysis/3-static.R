@@ -9,8 +9,8 @@ library(raster)
 library(dplyr)
 library(readxl)
 
-install.packages("shinyjs")
-install.packages("shinyWidgets")
+#install.packages("shinyjs")
+#install.packages("shinyWidgets")
 
 debug <- T
 

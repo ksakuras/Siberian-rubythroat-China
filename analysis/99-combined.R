@@ -7,7 +7,7 @@ gdl_list <- read_excel("data/gpr_settings.xlsx") %>%
 for (i in seq(1, length(gdl_list))) {
   gdl <- gdl_list[i]
   source("analysis/1-pressure.R")
-  source("analysis/2-light.R")
+  #source("analysis/2-light.R")
   source("analysis/3-static.R")
   source("analysis/4-basic-graph.R")
 }
