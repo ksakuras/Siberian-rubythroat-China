@@ -9,11 +9,12 @@ library(dplyr)
 library(raster)
 library(readxl)
 
+#install.packages("distill")
 # Set debug T to see all check and set to F once everything is correct
 debug <- T
 
 # Define the geolocator data logger id to use
-gdl <- "5D6"
+gdl <- "5D7"
 
 # Read its information from gpr_settings.xlsx
 gpr <- read_excel("data/gpr_settings.xlsx") %>%
@@ -44,7 +45,7 @@ pam$temperature <- data.frame(temp.mid[,c(2,3)])
 pam$light <- data.frame(acto.mid[,c(2,3)])   #create a list of light with acto schedule
 pam$light[,2] <- rep(0,length(pam$light[,2])) #force all data to 0 as we don't have light data
 names(pam) <- c("id","pressure","acceleration","temperature","light") #change "length" list to name "id"
-pam$id <- as.character("5D6")
+pam$id <- as.character("5D7")
 colnames(pam$pressure) <- c("date","obs")  #change column name for each list
 colnames(pam$acceleration) <- c("date","obs")
 colnames(pam$light) <- c("date","obs")
@@ -56,6 +57,7 @@ if (debug){
 }
 
 # Read the label and compute the stationary info
+trainset_write(pam,pathname = "data/1_pressure/labels/")  #auto-generate a .csv file
 pam <- trainset_read(pam, "data/1_pressure/labels/")
 pam <- pam_sta(pam)
 
@@ -175,3 +177,5 @@ save(
   gpr,
   file = paste0("data/1_pressure/", gpr$gdl_id, "_pressure_prob.Rdata")
 )
+
+

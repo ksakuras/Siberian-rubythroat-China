@@ -15,7 +15,7 @@ setupGeolocation()
 debug <- T
 
 # Define the geolocator data logger id to use
-gdl <- "5D6"
+#gdl <- "5D6"
 
 # Load the pressure file, also contains gpr, pam, col
 load(paste0("data/1_pressure/", gdl, "_pressure_prob.Rdata"))
