@@ -14,12 +14,10 @@ load(paste0("data/1_pressure/", gdl, "_pressure_prob.Rdata"))
 load(paste0("data/3_static/", gdl, "_static_prob.Rdata"))
 
 # Build the graph ---- #having problem at this line:
-## Error in graph_create(static_prob, thr_prob_percentile = gpr$thr_prob_percentile,  :
-## Using the `thr_gs` of 120 km/h provided with the binary distance, there are not any nodes left at stationary period 4 from stationary period 1
 
 grl <- graph_create(static_prob,
   thr_prob_percentile = gpr$thr_prob_percentile,
-  thr_gs = gpr$thr_gs # threshold km/h
+  thr_gs = 70 #gpr$thr_gs # threshold km/h
 )
 # If you get an error with trimming, use geopressureviz from end of 3.static.R
 
@@ -55,9 +53,14 @@ shortest_path_df <- as.data.frame(shortest_path)
 shortest_path_timeserie <- geopressure_ts_path(shortest_path_df, pam$pressure, include_flight = c(0, 1))
 
 # Simulation ----
-nj <- 10
+nj <- 14
 path_sim <- graph_simulation(grl, nj = nj)
+###  Error in path[, 1] <- grl$equipment :
+###  number of items to replace is not a multiple of replacement length
 
+head(shortest_path$lat)
+head(shortest_path$lon)
+scatter.smooth(shortest_path$lat~shortest_path$lon)
 
 
 if (debug) {
@@ -119,7 +122,7 @@ if (debug) {
     static_prob = static_prob,
     static_prob_marginal = static_prob_marginal,
     pressure_prob = pressure_prob,
-    light_prob = light_prob,
+    #light_prob = light_prob,
     pressure_timeserie = shortest_path_timeserie
   )
   save(geopressureviz, file = "~/geopressureviz.RData")

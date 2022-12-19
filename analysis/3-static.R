@@ -15,13 +15,13 @@ library(readxl)
 debug <- T
 
 # Define the geolocator data logger id to use
-gdl <- "5D7"
+gdl <- "5CF"
 
 # Load the pressure file, also contains set, pam, col
 load(paste0("data/1_pressure/", gdl, "_pressure_prob.Rdata"))
 
 # Defint the threashold of the stationary period to consider
-thr_sta_dur <- 0# gpr$thr_dur # in hours
+thr_sta_dur <- gpr$thr_dur # in hours
 
 sta_pres <- unlist(lapply(pressure_prob, function(x) raster::metadata(x)$sta_id))
 sta_thres <- pam$sta$sta_id[difftime(pam$sta$end, pam$sta$start, units = "hours") > thr_sta_dur]

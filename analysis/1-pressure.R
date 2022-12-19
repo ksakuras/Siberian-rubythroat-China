@@ -14,7 +14,7 @@ library(readxl)
 debug <- T
 
 # Define the geolocator data logger id to use
-gdl <- "5D7"
+gdl <- "5CF"
 
 # Read its information from gpr_settings.xlsx
 gpr <- read_excel("data/gpr_settings.xlsx") %>%
@@ -23,7 +23,7 @@ gpr <- read_excel("data/gpr_settings.xlsx") %>%
 raw <- read.csv(paste0("data/0_PAM/", "/", gdl, "_act_pres_temp.csv"))
 
 # change timestamp back to correct format
-raw$timestamp = as.POSIXct(raw$timestamp,tz = "GMT", format = c("%Y-%m-%d %H:%M:%S"))
+raw$timestamp = as.POSIXct(raw$timestamp,tz = "GMT", format = c("%Y-%m-%d %H:%M:%S")) #capital sensitive!
 if (debug){
   head(raw)
   #CHECK whether it is GMT!
@@ -45,7 +45,7 @@ pam$temperature <- data.frame(temp.mid[,c(2,3)])
 pam$light <- data.frame(acto.mid[,c(2,3)])   #create a list of light with acto schedule
 pam$light[,2] <- rep(0,length(pam$light[,2])) #force all data to 0 as we don't have light data
 names(pam) <- c("id","pressure","acceleration","temperature","light") #change "length" list to name "id"
-pam$id <- as.character("5D7")
+pam$id <- as.character("5CF")
 colnames(pam$pressure) <- c("date","obs")  #change column name for each list
 colnames(pam$acceleration) <- c("date","obs")
 colnames(pam$light) <- c("date","obs")
@@ -109,6 +109,7 @@ pam_short <- pam
 pam_short$pressure <- pam_short$pressure %>%
   mutate(sta_id = ifelse(sta_id %in% sta_id_keep, sta_id, NA))
 
+head(pam_short$sta)
 # Query pressure map
 # We overwrite the setting parameter for resolution to make query faster at first
 pressure_maps <- geopressure_map(pam_short$pressure,
