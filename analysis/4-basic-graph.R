@@ -17,13 +17,19 @@ load(paste0("data/3_static/", gdl, "_static_prob.Rdata"))
 
 grl <- graph_create(static_prob,
   thr_prob_percentile = gpr$thr_prob_percentile,
-  thr_gs = 70 #gpr$thr_gs # threshold km/h
+  thr_gs = gpr$thr_gs # threshold km/h
 )
 # If you get an error with trimming, use geopressureviz from end of 3.static.R
 
-# Add probability of each edge
-grl$p <- grl$ps * flight_prob(grl$gs, method = "gamma", shape = 7, scale = 7, low_speed_fix = gpr$low_speed_fix)
+#visualize the probability of speed ####
+speed <- seq(1, 120)
+low_speed_fix <- 20 # minimum speed allowed
+prob <- flight_prob(speed, method = "gamma", shape = 7, scale = 7, low_speed_fix = low_speed_fix)
+plot(speed, prob, type = "l", xlab = "Groundspeed [km/h]", ylab = "Probability")
+abline(v = low_speed_fix)
 
+# Add probability of each edge ####
+grl$p <- grl$ps * flight_prob(grl$gs, method = "gamma", shape = 7, scale = 7, low_speed_fix = gpr$low_speed_fix)
 
 
 
@@ -55,14 +61,28 @@ shortest_path_timeserie <- geopressure_ts_path(shortest_path_df, pam$pressure, i
 # Simulation ----
 nj <- 14
 path_sim <- graph_simulation(grl, nj = nj)
-###  Error in path[, 1] <- grl$equipment :
-###  number of items to replace is not a multiple of replacement length
 
 head(shortest_path$lat)
 head(shortest_path$lon)
 scatter.smooth(shortest_path$lat~shortest_path$lon)
 
+# visualize the simulation ####
+col <- rep(RColorBrewer::brewer.pal(9, "Set1"), times = ceiling(grl$sz[3] / 9))
+m <- leaflet(width = "100%") %>%
+  addProviderTiles(providers$Stamen.TerrainBackground) %>%
+  addFullscreenControl()
+for (i in seq_len(nj)) {
+  m <- m %>%
+    addPolylines(lng = path_sim$lon[i, ], lat = path_sim$lat[i, ], opacity = 0.7, weight = 1, color = "#808080")
+}
+for (i in seq_len(grl$sz[3])) {
+  m <- m %>%
+    addCircles(lng = path_sim$lon[, i], lat = path_sim$lat[, i], opacity = .4, weight = 10, color = col[i])
+}
+ m <- m %>% addLegend(position="bottomright", colors = col[1:grl$sz[3]], labels = seq_len(grl$sz[3]), title = "stationary period", opacity = 1 )
+m
 
+# ####
 if (debug) {
 
   # Rapid visual check
@@ -112,9 +132,9 @@ if (debug) {
   load(paste0("data/1_pressure/", gdl, "_pressure_prob.Rdata"))
   sta_marginal <- unlist(lapply(static_prob_marginal, function(x) raster::metadata(x)$sta_id))
   sta_pres <- unlist(lapply(pressure_prob, function(x) raster::metadata(x)$sta_id))
-  sta_light <- unlist(lapply(light_prob, function(x) raster::metadata(x)$sta_id))
+  #sta_light <- unlist(lapply(light_prob, function(x) raster::metadata(x)$sta_id))
   pressure_prob <- pressure_prob[sta_pres %in% sta_marginal]
-  light_prob <- light_prob[sta_light %in% sta_marginal]
+  #light_prob <- light_prob[sta_light %in% sta_marginal]
 
 
   geopressureviz <- list(
