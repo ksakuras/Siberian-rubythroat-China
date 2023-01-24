@@ -7,7 +7,7 @@ library(igraph)
 debug <- T
 
 # Define which track to work with
-#gdl <- "5D7"
+#gdl <- "5D6"
 
 # Load static prob
 load(paste0("data/1_pressure/", gdl, "_pressure_prob.Rdata"))

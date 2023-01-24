@@ -5,7 +5,7 @@ library(raster)
 library(igraph)
 
 # Define which track to work with
-gdl <- "18LX"
+gdl <- "5D6"
 
 debug <- T
 
@@ -15,6 +15,7 @@ load(paste0("data/3_static/", gdl, "_static_prob.Rdata"))
 load(paste0("data/5_wind_graph/", gdl, "_grl.Rdata"))
 
 # Movement model
+?flight_bird
 bird <- flight_bird(gpr$scientific_name)
 speed <- seq(0, 80)
 prob <- flight_prob(speed,
@@ -27,7 +28,7 @@ plot(speed, prob, type = "l", xlab = "Airspeed [km/h]", ylab = "Probability")
 
 # Convert to probability
 grl$p <- grl$ps * flight_prob(grl$as, method = "power", bird = bird, low_speed_fix = 20)
-
+str(grl$as)
 
 # Marginal map ----
 static_prob_marginal <- graph_marginal(grl)

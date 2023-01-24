@@ -15,7 +15,7 @@ library(readxl)
 debug <- T
 
 # Define the geolocator data logger id to use
-gdl <- "5CF"
+#gdl <- "5D6"
 
 # Load the pressure file, also contains set, pam, col
 load(paste0("data/1_pressure/", gdl, "_pressure_prob.Rdata"))
