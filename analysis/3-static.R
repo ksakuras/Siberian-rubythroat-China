@@ -15,7 +15,7 @@ library(readxl)
 debug <- T
 
 # Define the geolocator data logger id to use
-#gdl <- "5D6"
+#gdl <- "5D7"
 
 # Load the pressure file, also contains set, pam, col
 load(paste0("data/1_pressure/", gdl, "_pressure_prob.Rdata"))
@@ -105,7 +105,7 @@ path <- geopressure_map2path(static_prob)
 static_timeserie <- geopressure_ts_path(path, pam$pressure)
 
 
-if (debug) {
+#if (debug) {
   # GeopressureViz
   geopressureviz(
     pam = pam,
@@ -150,7 +150,7 @@ if (debug) {
       stop(paste("There are no possible transition from stationary period", i_s, "to", i_s + 1, ". Check part 1 process (light and pressure)", sep = " "))
     }
   }
-}
+#}
 
 ## Save ----
 save(

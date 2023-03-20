@@ -14,7 +14,7 @@ library(readxl)
 debug <- T
 
 # Define the geolocator data logger id to use
-gdl <- "5D6"
+gdl <- "5D8"
 
 # Read its information from gpr_settings.xlsx
 gpr <- read_excel("data/gpr_settings.xlsx") %>%
@@ -24,13 +24,13 @@ raw <- read.csv(paste0("data/0_PAM/", "/", gdl, "_act_pres_temp.csv"))
 
 # change timestamp back to correct format
 raw$timestamp = as.POSIXct(raw$timestamp,tz = "GMT", format = c("%Y-%m-%d %H:%M:%S")) #capital sensitive!
-if (debug){
+#if (debug){
   head(raw)
   #CHECK whether it is GMT!
   unique(raw$timestamp)
   summary(raw)
   str(raw)
-}
+#}
 
 # extract info
 pressure.mid = subset(raw, series == "pressure")
@@ -45,16 +45,16 @@ pam$temperature <- data.frame(temp.mid[,c(2,3)])
 pam$light <- data.frame(acto.mid[,c(2,3)])   #create a list of light with acto schedule
 pam$light[,2] <- rep(0,length(pam$light[,2])) #force all data to 0 as we don't have light data
 names(pam) <- c("id","pressure","acceleration","temperature","light") #change "length" list to name "id"
-pam$id <- as.character("5D6")
+pam$id <- as.character(gdl)
 colnames(pam$pressure) <- c("date","obs")  #change column name for each list
 colnames(pam$acceleration) <- c("date","obs")
 colnames(pam$light) <- c("date","obs")
 colnames(pam$temperature) <- c("date","obs")
 
-if (debug){
+#if (debug){
   summary(pam)
   str(pam)
-}
+#}
 
 # Read the label and compute the stationary info
 trainset_write(pam,pathname = "data/1_pressure/labels/")  #auto-generate a .csv file
@@ -67,7 +67,7 @@ col <- col[1:(nrow(pam$sta) + 1)]
 names(col) <- levels(factor(c(0, pam$sta$sta_id)))
 
 
-if (debug) {
+#if (debug) {
   # Test 1 ----
   pam$sta %>%
     mutate(
@@ -91,7 +91,7 @@ if (debug) {
     scale_y_continuous(name = "Pressure (hPa)")
 
   ggplotly(p, dynamicTicks = T) %>% layout(showlegend = F)
-}
+#}
 
 
 # Filter stationary period based on the number of pressure datapoint available
@@ -126,7 +126,7 @@ pressure_prob <- geopressure_prob_map(pressure_maps,
 )
 
 
-if (debug) {
+#if (debug) {
   # Compute the path of the most likely position
   path <- geopressure_map2path(pressure_prob)
 
@@ -168,7 +168,7 @@ if (debug) {
     addFullscreenControl() %>%
     addPolylines(lng = path$lon, lat = path$lat, opacity = 0.7, weight = 1, color = "#808080") %>%
     addCircles(lng = path$lon, lat = path$lat, opacity = 1, color = pal(factor(path$sta_id, levels = pam$sta$sta_id)), weight = sta_duration^(0.3) * 10)
-}
+#}
 
 # Save ----
 save(

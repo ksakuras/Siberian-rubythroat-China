@@ -1,4 +1,3 @@
-library(GeoPressureR)
 library(ecmwfr)
 
 # Define which track to work with

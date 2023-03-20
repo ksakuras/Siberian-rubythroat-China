@@ -3,6 +3,9 @@ library(leaflet)
 library(leaflet.extras)
 library(raster)
 library(igraph)
+library(mapview)
+library(htmlwidgets)
+library(webshot)
 
 debug <- T
 
@@ -25,17 +28,12 @@ grl <- graph_create(static_prob,
 speed <- seq(1, 120)
 low_speed_fix <- 20 # minimum speed allowed
 prob <- flight_prob(speed, method = "gamma", shape = 7, scale = 7, low_speed_fix = low_speed_fix)
+par(mfrow = c(1,1))
 plot(speed, prob, type = "l", xlab = "Groundspeed [km/h]", ylab = "Probability")
 abline(v = low_speed_fix)
 
 # Add probability of each edge ####
 grl$p <- grl$ps * flight_prob(grl$gs, method = "gamma", shape = 7, scale = 7, low_speed_fix = gpr$low_speed_fix)
-
-
-
-
-
-
 
 
 # Marginal map ----
@@ -83,7 +81,7 @@ for (i in seq_len(grl$sz[3])) {
 m
 
 # ####
-if (debug) {
+#if (debug) {
 
   # Rapid visual check
   sta_duration <- unlist(lapply(static_prob_marginal, function(x) {
@@ -99,34 +97,38 @@ if (debug) {
       addCircles(lng = path_sim$lon[i, ], lat = path_sim$lat[i, ], opacity = 1, weight = 1, color = "#000")
   }
 
-  m %>%
+  m <- m %>%
     addPolylines(lng = shortest_path$lon, lat = shortest_path$lat, opacity = 1, color = "#808080", weight = 3) %>%
-    addCircles(lng = shortest_path$lon, lat = shortest_path$lat, opacity = 1, color = "#000", weight = sta_duration^(0.3) * 10)
-
+    addCircles(lng = shortest_path$lon, lat = shortest_path$lat, opacity = 1, color = "#125678", weight = sta_duration^(0.3) * 8)
+m
+#save image
+  saveWidget(m, "temp.html", selfcontained = FALSE)
+  webshot("temp.html", file = "5D7_basic.png",
+          cliprect = "viewport")
 
   # Light comparison
-  load(paste0("data/2_light/", gdl, "_light_prob.Rdata"))
-  raw_geolight <- pam$light %>%
-    transmute(
-      Date = date,
-      Light = obs
-    )
-  lightImage(
-    tagdata = raw_geolight,
-    offset = gpr$shift_k / 60 / 60
-  )
-  tsimagePoints(twl$twilight,
-    offset = -gpr$shift_k / 60 / 60, pch = 16, cex = 1.2,
-    col = ifelse(twl$deleted, "grey20", ifelse(twl$rise, "firebrick", "cornflowerblue"))
-  )
-  for (ts in shortest_path_timeserie) {
-    twl_fl <- twl %>%
-      filter(twilight > ts$date[1] & twilight < tail(ts$date, 1))
-    tsimageDeploymentLines(twl_fl$twilight,
-      lon = ts$lon[1], ts$lat[1],
-      offset = gpr$shift_k / 60 / 60, lwd = 3, col = adjustcolor("orange", alpha.f = 0.5)
-    )
-  }
+  #load(paste0("data/2_light/", gdl, "_light_prob.Rdata"))
+  #raw_geolight <- pam$light %>%
+  #  transmute(
+  #    Date = date,
+  #    Light = obs
+  #  )
+  #lightImage(
+  #  tagdata = raw_geolight,
+  #  offset = gpr$shift_k / 60 / 60
+  #)
+  #tsimagePoints(twl$twilight,
+  #  offset = -gpr$shift_k / 60 / 60, pch = 16, cex = 1.2,
+  #  col = ifelse(twl$deleted, "grey20", ifelse(twl$rise, "firebrick", "cornflowerblue"))
+  #)
+  #for (ts in shortest_path_timeserie) {
+  #  twl_fl <- twl %>%
+  #    filter(twilight > ts$date[1] & twilight < tail(ts$date, 1))
+  #  tsimageDeploymentLines(twl_fl$twilight,
+  #    lon = ts$lon[1], ts$lat[1],
+  #    offset = gpr$shift_k / 60 / 60, lwd = 3, col = adjustcolor("orange", alpha.f = 0.5)
+  #  )
+  #}
 
   # In depth analysis with GeoPressureViz
   load(paste0("data/1_pressure/", gdl, "_pressure_prob.Rdata"))
@@ -150,7 +152,7 @@ if (debug) {
   shiny::runApp(system.file("geopressureviz", package = "GeoPressureR"),
     launch.browser = getOption("browser")
   )
-}
+#}
 
 
 # Save
@@ -161,3 +163,26 @@ save( # grl, we are excluding grl because of its size on this repo. Feel free to
   shortest_path_timeserie,
   file = paste0("data/4_basic_graph/", gpr$gdl_id, "_basic_graph.Rdata")
 )
+
+#Marginal probability map
+li_s <- list()
+l <- leaflet(width = "100%") %>%
+  addProviderTiles(providers$Stamen.TerrainBackground) %>%
+  addFullscreenControl()
+for (i_r in seq_len(length(static_prob_marginal))) {
+  i_s <- metadata(static_prob_marginal[[i_r]])$sta_id
+  info <- metadata(static_prob_marginal[[i_r]])$temporal_extent
+  info_str <- paste0(i_s, " | ", info[1], "->", info[2])
+  li_s <- append(li_s, info_str)
+  l <- l %>%
+    addRasterImage(static_prob_marginal[[i_r]], colors = "OrRd", opacity = 0.8, group = info_str)
+}
+l %>%
+  addPolylines(lng = shortest_path$lon, lat = shortest_path$lat, opacity = .5, color = "#808080", weight = 3) %>%
+  addCircles(lng = shortest_path$lon, lat = shortest_path$lat, opacity = .4, weight = sta_duration^(0.3) * 10, popup = paste0("sta_id=", shortest_path$sta_id), color = "#000") %>%
+  addLayersControl(
+    overlayGroups = li_s,
+    options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  hideGroup(tail(li_s, length(li_s) - 1))
+
