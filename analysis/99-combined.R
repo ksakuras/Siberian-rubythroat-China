@@ -1,5 +1,6 @@
+library(GeoPressureR)
 #visualize the final wind graph results after everything is done ####
-gdl <- "5D7"
+gdl <- "5CF"# "5D6" "5D7" "5D8" "5E5" "5E7" "56C" "5CF"
 load(paste0("data/1_pressure/", gdl, "_pressure_prob.Rdata"))
 load(paste0("data/3_static/", gdl, "_static_prob.Rdata"))
 load(paste0("data/5_wind_graph/", gdl, "_wind_graph.Rdata"))
