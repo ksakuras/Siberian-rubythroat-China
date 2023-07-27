@@ -1,6 +1,6 @@
 library(GeoPressureR)
 #visualize the final wind graph results after everything is done ####
-gdl <- "5CF"# "5D6" "5D7" "5D8" "5E5" "5E7" "56C" "5CF"
+gdl <- "5D7"# "5D6" "5D7" "5D8" "5E5" "5E7" "56C" "5CF"
 load(paste0("data/1_pressure/", gdl, "_pressure_prob.Rdata"))
 load(paste0("data/3_static/", gdl, "_static_prob.Rdata"))
 load(paste0("data/5_wind_graph/", gdl, "_wind_graph.Rdata"))
@@ -198,9 +198,15 @@ g <- graph_from_data_frame(data.frame(
   weight = -log(grl$p)
 ))
 
+if (length(grl$equipment)>1){
+  equipment <- which.max(as.matrix(static_prob_marginal[[1]]))
+  stopifnot(equipment %in% grl$equipment)
+} else {
+  equipment <- grl$equipment
+}
 retrieval <- which.max(as.matrix(static_prob_marginal[[length(static_prob_marginal)]])) + grl$sz[1] * grl$sz[2] * (grl$sz[3] - 1)
 stopifnot(retrieval %in% grl$retrieval)
-sp <- shortest_paths(g, from = paste(grl$equipment), to = paste(retrieval))
+sp <- shortest_paths(g, from = paste(equipment), to = paste(retrieval))
 
 # Convert igraph representation to lat-lon
 shortest_path <- graph_path2lonlat(as.numeric(sp$vpath[[1]]$name), grl)
