@@ -1099,7 +1099,7 @@ pressure,2021-09-13T17:00:00.000Z,823.9,
 pressure,2021-09-13T18:00:00.000Z,962.2,
 pressure,2021-09-13T19:00:00.000Z,961.7,
 pressure,2021-09-13T20:00:00.000Z,961.8,
-pressure,2021-09-13T21:00:00.000Z,954,
+pressure,2021-09-13T21:00:00.000Z,954,1
 pressure,2021-09-13T22:00:00.000Z,965.9,
 pressure,2021-09-13T23:00:00.000Z,966.1,
 pressure,2021-09-14T00:00:00.000Z,966.8,
@@ -1841,7 +1841,7 @@ pressure,2021-10-14T15:00:00.000Z,985.6,
 pressure,2021-10-14T16:00:00.000Z,953.6,
 pressure,2021-10-14T17:00:00.000Z,953.3,
 pressure,2021-10-14T18:00:00.000Z,952.9,
-pressure,2021-10-14T19:00:00.000Z,967.5,
+pressure,2021-10-14T19:00:00.000Z,967.5,1
 pressure,2021-10-14T20:00:00.000Z,967.1,1
 pressure,2021-10-14T21:00:00.000Z,967.4,1
 pressure,2021-10-14T22:00:00.000Z,968,1
@@ -2082,9 +2082,9 @@ pressure,2021-10-24T16:00:00.000Z,735,
 pressure,2021-10-24T17:00:00.000Z,726.9,
 pressure,2021-10-24T18:00:00.000Z,770.5,
 pressure,2021-10-24T19:00:00.000Z,849.2,
-pressure,2021-10-24T20:00:00.000Z,848.7,
-pressure,2021-10-24T21:00:00.000Z,848.4,
-pressure,2021-10-24T22:00:00.000Z,848.3,
+pressure,2021-10-24T20:00:00.000Z,848.7,1
+pressure,2021-10-24T21:00:00.000Z,848.4,1
+pressure,2021-10-24T22:00:00.000Z,848.3,1
 pressure,2021-10-24T23:00:00.000Z,860.5,1
 pressure,2021-10-25T00:00:00.000Z,861.6,1
 pressure,2022-04-05T00:00:00.000Z,922.4,
@@ -2629,8 +2629,8 @@ pressure,2022-04-27T10:00:00.000Z,970.5,
 pressure,2022-04-27T11:00:00.000Z,970.9,
 pressure,2022-04-27T12:00:00.000Z,971.5,
 pressure,2022-04-27T13:00:00.000Z,972.7,
-pressure,2022-04-27T14:00:00.000Z,920.8,
-pressure,2022-04-27T15:00:00.000Z,920.5,
+pressure,2022-04-27T14:00:00.000Z,920.8,1
+pressure,2022-04-27T15:00:00.000Z,920.5,1
 pressure,2022-04-27T16:00:00.000Z,920.6,
 pressure,2022-04-27T17:00:00.000Z,920,
 pressure,2022-04-27T18:00:00.000Z,952.6,
@@ -2827,9 +2827,9 @@ pressure,2022-05-05T16:00:00.000Z,773.6,
 pressure,2022-05-05T17:00:00.000Z,855.8,
 pressure,2022-05-05T18:00:00.000Z,855.9,
 pressure,2022-05-05T19:00:00.000Z,911.3,
-pressure,2022-05-05T20:00:00.000Z,911.6,
-pressure,2022-05-05T21:00:00.000Z,912,
-pressure,2022-05-05T22:00:00.000Z,918.2,
+pressure,2022-05-05T20:00:00.000Z,911.6,1
+pressure,2022-05-05T21:00:00.000Z,912,1
+pressure,2022-05-05T22:00:00.000Z,918.2,1
 pressure,2022-05-05T23:00:00.000Z,918.9,1
 pressure,2022-05-06T00:00:00.000Z,920.1,1
 pressure,2022-05-06T01:00:00.000Z,923.9,1
@@ -4626,7 +4626,7 @@ acceleration,2021-09-07T16:00:00.000Z,28,1
 acceleration,2021-09-07T17:00:00.000Z,28,1
 acceleration,2021-09-07T18:00:00.000Z,29,1
 acceleration,2021-09-07T19:00:00.000Z,15,1
-acceleration,2021-09-07T20:00:00.000Z,0,
+acceleration,2021-09-07T20:00:00.000Z,0,1
 acceleration,2021-09-07T21:00:00.000Z,0,
 acceleration,2021-09-07T22:00:00.000Z,3,
 acceleration,2021-09-07T23:00:00.000Z,4,
@@ -4648,7 +4648,7 @@ acceleration,2021-09-08T14:00:00.000Z,25,1
 acceleration,2021-09-08T15:00:00.000Z,29,1
 acceleration,2021-09-08T16:00:00.000Z,29,1
 acceleration,2021-09-08T17:00:00.000Z,27,1
-acceleration,2021-09-08T18:00:00.000Z,0,
+acceleration,2021-09-08T18:00:00.000Z,0,1
 acceleration,2021-09-08T19:00:00.000Z,0,
 acceleration,2021-09-08T20:00:00.000Z,0,
 acceleration,2021-09-08T21:00:00.000Z,0,
@@ -4701,7 +4701,7 @@ acceleration,2021-09-10T19:00:00.000Z,30,1
 acceleration,2021-09-10T20:00:00.000Z,24,1
 acceleration,2021-09-10T21:00:00.000Z,24,1
 acceleration,2021-09-10T22:00:00.000Z,9,1
-acceleration,2021-09-10T23:00:00.000Z,3,
+acceleration,2021-09-10T23:00:00.000Z,3,1
 acceleration,2021-09-11T00:00:00.000Z,3,
 acceleration,2021-09-11T01:00:00.000Z,1,
 acceleration,2021-09-11T02:00:00.000Z,3,
@@ -4720,7 +4720,7 @@ acceleration,2021-09-11T14:00:00.000Z,10,1
 acceleration,2021-09-11T15:00:00.000Z,29,1
 acceleration,2021-09-11T16:00:00.000Z,30,1
 acceleration,2021-09-11T17:00:00.000Z,19,1
-acceleration,2021-09-11T18:00:00.000Z,0,
+acceleration,2021-09-11T18:00:00.000Z,0,1
 acceleration,2021-09-11T19:00:00.000Z,0,
 acceleration,2021-09-11T20:00:00.000Z,5,
 acceleration,2021-09-11T21:00:00.000Z,0,
@@ -4771,7 +4771,7 @@ acceleration,2021-09-13T17:00:00.000Z,29,1
 acceleration,2021-09-13T18:00:00.000Z,17,1
 acceleration,2021-09-13T19:00:00.000Z,0,1
 acceleration,2021-09-13T20:00:00.000Z,0,1
-acceleration,2021-09-13T21:00:00.000Z,10,1
+acceleration,2021-09-13T21:00:00.000Z,10,
 acceleration,2021-09-13T22:00:00.000Z,1,
 acceleration,2021-09-13T23:00:00.000Z,6,
 acceleration,2021-09-14T00:00:00.000Z,5,
@@ -4797,7 +4797,7 @@ acceleration,2021-09-14T19:00:00.000Z,29,1
 acceleration,2021-09-14T20:00:00.000Z,27,1
 acceleration,2021-09-14T21:00:00.000Z,27,1
 acceleration,2021-09-14T22:00:00.000Z,4,1
-acceleration,2021-09-14T23:00:00.000Z,4,
+acceleration,2021-09-14T23:00:00.000Z,4,1
 acceleration,2021-09-15T00:00:00.000Z,4,
 acceleration,2021-09-15T01:00:00.000Z,0,
 acceleration,2021-09-15T02:00:00.000Z,0,
@@ -4820,7 +4820,7 @@ acceleration,2021-09-15T18:00:00.000Z,29,1
 acceleration,2021-09-15T19:00:00.000Z,27,1
 acceleration,2021-09-15T20:00:00.000Z,28,1
 acceleration,2021-09-15T21:00:00.000Z,4,1
-acceleration,2021-09-15T22:00:00.000Z,3,
+acceleration,2021-09-15T22:00:00.000Z,3,1
 acceleration,2021-09-15T23:00:00.000Z,5,
 acceleration,2021-09-16T00:00:00.000Z,7,
 acceleration,2021-09-16T01:00:00.000Z,4,
@@ -4840,7 +4840,7 @@ acceleration,2021-09-16T14:00:00.000Z,0,
 acceleration,2021-09-16T15:00:00.000Z,0,
 acceleration,2021-09-16T16:00:00.000Z,14,1
 acceleration,2021-09-16T17:00:00.000Z,8,1
-acceleration,2021-09-16T18:00:00.000Z,0,
+acceleration,2021-09-16T18:00:00.000Z,0,1
 acceleration,2021-09-16T19:00:00.000Z,0,
 acceleration,2021-09-16T20:00:00.000Z,0,
 acceleration,2021-09-16T21:00:00.000Z,0,
@@ -4929,7 +4929,7 @@ acceleration,2021-09-20T07:00:00.000Z,0,
 acceleration,2021-09-20T08:00:00.000Z,2,
 acceleration,2021-09-20T09:00:00.000Z,4,
 acceleration,2021-09-20T10:00:00.000Z,3,
-acceleration,2021-09-20T11:00:00.000Z,1,
+acceleration,2021-09-20T11:00:00.000Z,1,1
 acceleration,2021-09-20T12:00:00.000Z,24,1
 acceleration,2021-09-20T13:00:00.000Z,28,1
 acceleration,2021-09-20T14:00:00.000Z,27,1
@@ -4953,7 +4953,7 @@ acceleration,2021-09-21T07:00:00.000Z,1,
 acceleration,2021-09-21T08:00:00.000Z,0,
 acceleration,2021-09-21T09:00:00.000Z,1,
 acceleration,2021-09-21T10:00:00.000Z,3,
-acceleration,2021-09-21T11:00:00.000Z,1,
+acceleration,2021-09-21T11:00:00.000Z,1,1
 acceleration,2021-09-21T12:00:00.000Z,25,1
 acceleration,2021-09-21T13:00:00.000Z,28,1
 acceleration,2021-09-21T14:00:00.000Z,30,1
@@ -4986,7 +4986,7 @@ acceleration,2021-09-22T16:00:00.000Z,28,1
 acceleration,2021-09-22T17:00:00.000Z,25,1
 acceleration,2021-09-22T18:00:00.000Z,29,1
 acceleration,2021-09-22T19:00:00.000Z,5,1
-acceleration,2021-09-22T20:00:00.000Z,0,
+acceleration,2021-09-22T20:00:00.000Z,0,1
 acceleration,2021-09-22T21:00:00.000Z,0,
 acceleration,2021-09-22T22:00:00.000Z,0,
 acceleration,2021-09-22T23:00:00.000Z,4,
@@ -5059,7 +5059,7 @@ acceleration,2021-09-25T17:00:00.000Z,27,1
 acceleration,2021-09-25T18:00:00.000Z,26,1
 acceleration,2021-09-25T19:00:00.000Z,25,1
 acceleration,2021-09-25T20:00:00.000Z,14,1
-acceleration,2021-09-25T21:00:00.000Z,0,
+acceleration,2021-09-25T21:00:00.000Z,0,1
 acceleration,2021-09-25T22:00:00.000Z,1,
 acceleration,2021-09-25T23:00:00.000Z,4,
 acceleration,2021-09-26T00:00:00.000Z,2,
@@ -5074,7 +5074,7 @@ acceleration,2021-09-26T08:00:00.000Z,4,
 acceleration,2021-09-26T09:00:00.000Z,6,
 acceleration,2021-09-26T10:00:00.000Z,3,
 acceleration,2021-09-26T11:00:00.000Z,2,
-acceleration,2021-09-26T12:00:00.000Z,0,
+acceleration,2021-09-26T12:00:00.000Z,0,1
 acceleration,2021-09-26T13:00:00.000Z,13,1
 acceleration,2021-09-26T14:00:00.000Z,28,1
 acceleration,2021-09-26T15:00:00.000Z,28,1
@@ -5131,7 +5131,7 @@ acceleration,2021-09-28T17:00:00.000Z,0,1
 acceleration,2021-09-28T18:00:00.000Z,5,1
 acceleration,2021-09-28T19:00:00.000Z,0,1
 acceleration,2021-09-28T20:00:00.000Z,10,1
-acceleration,2021-09-28T21:00:00.000Z,12,1
+acceleration,2021-09-28T21:00:00.000Z,12,
 acceleration,2021-09-28T22:00:00.000Z,1,
 acceleration,2021-09-28T23:00:00.000Z,1,
 acceleration,2021-09-29T00:00:00.000Z,2,
@@ -5391,7 +5391,7 @@ acceleration,2021-10-09T13:00:00.000Z,0,
 acceleration,2021-10-09T14:00:00.000Z,0,
 acceleration,2021-10-09T15:00:00.000Z,0,
 acceleration,2021-10-09T16:00:00.000Z,0,
-acceleration,2021-10-09T17:00:00.000Z,0,
+acceleration,2021-10-09T17:00:00.000Z,0,1
 acceleration,2021-10-09T18:00:00.000Z,23,1
 acceleration,2021-10-09T19:00:00.000Z,30,1
 acceleration,2021-10-09T20:00:00.000Z,23,1
@@ -5441,7 +5441,7 @@ acceleration,2021-10-11T15:00:00.000Z,29,1
 acceleration,2021-10-11T16:00:00.000Z,28,1
 acceleration,2021-10-11T17:00:00.000Z,27,1
 acceleration,2021-10-11T18:00:00.000Z,15,1
-acceleration,2021-10-11T19:00:00.000Z,0,
+acceleration,2021-10-11T19:00:00.000Z,0,1
 acceleration,2021-10-11T20:00:00.000Z,0,
 acceleration,2021-10-11T21:00:00.000Z,0,
 acceleration,2021-10-11T22:00:00.000Z,0,
@@ -5466,7 +5466,7 @@ acceleration,2021-10-12T16:00:00.000Z,28,1
 acceleration,2021-10-12T17:00:00.000Z,30,1
 acceleration,2021-10-12T18:00:00.000Z,29,1
 acceleration,2021-10-12T19:00:00.000Z,8,1
-acceleration,2021-10-12T20:00:00.000Z,2,
+acceleration,2021-10-12T20:00:00.000Z,2,1
 acceleration,2021-10-12T21:00:00.000Z,5,
 acceleration,2021-10-12T22:00:00.000Z,0,
 acceleration,2021-10-12T23:00:00.000Z,5,
@@ -5489,7 +5489,7 @@ acceleration,2021-10-13T15:00:00.000Z,0,
 acceleration,2021-10-13T16:00:00.000Z,26,1
 acceleration,2021-10-13T17:00:00.000Z,27,1
 acceleration,2021-10-13T18:00:00.000Z,26,1
-acceleration,2021-10-13T19:00:00.000Z,2,
+acceleration,2021-10-13T19:00:00.000Z,2,1
 acceleration,2021-10-13T20:00:00.000Z,0,
 acceleration,2021-10-13T21:00:00.000Z,0,
 acceleration,2021-10-13T22:00:00.000Z,0,
@@ -5513,7 +5513,7 @@ acceleration,2021-10-14T15:00:00.000Z,0,
 acceleration,2021-10-14T16:00:00.000Z,10,1
 acceleration,2021-10-14T17:00:00.000Z,0,1
 acceleration,2021-10-14T18:00:00.000Z,0,1
-acceleration,2021-10-14T19:00:00.000Z,4,1
+acceleration,2021-10-14T19:00:00.000Z,4,
 acceleration,2021-10-14T20:00:00.000Z,0,
 acceleration,2021-10-14T21:00:00.000Z,0,
 acceleration,2021-10-14T22:00:00.000Z,0,
@@ -5709,7 +5709,7 @@ acceleration,2021-10-22T19:00:00.000Z,27,1
 acceleration,2021-10-22T20:00:00.000Z,26,1
 acceleration,2021-10-22T21:00:00.000Z,26,1
 acceleration,2021-10-22T22:00:00.000Z,26,1
-acceleration,2021-10-22T23:00:00.000Z,4,
+acceleration,2021-10-22T23:00:00.000Z,4,1
 acceleration,2021-10-23T00:00:00.000Z,6,
 acceleration,2021-10-23T01:00:00.000Z,6,
 acceleration,2021-10-23T02:00:00.000Z,2,
@@ -5731,7 +5731,7 @@ acceleration,2021-10-23T17:00:00.000Z,22,1
 acceleration,2021-10-23T18:00:00.000Z,27,1
 acceleration,2021-10-23T19:00:00.000Z,28,1
 acceleration,2021-10-23T20:00:00.000Z,13,1
-acceleration,2021-10-23T21:00:00.000Z,0,
+acceleration,2021-10-23T21:00:00.000Z,0,1
 acceleration,2021-10-23T22:00:00.000Z,0,
 acceleration,2021-10-23T23:00:00.000Z,1,
 acceleration,2021-10-24T00:00:00.000Z,0,
@@ -5754,7 +5754,7 @@ acceleration,2021-10-24T16:00:00.000Z,29,1
 acceleration,2021-10-24T17:00:00.000Z,25,1
 acceleration,2021-10-24T18:00:00.000Z,26,1
 acceleration,2021-10-24T19:00:00.000Z,4,1
-acceleration,2021-10-24T20:00:00.000Z,0,
+acceleration,2021-10-24T20:00:00.000Z,0,1
 acceleration,2021-10-24T21:00:00.000Z,0,
 acceleration,2021-10-24T22:00:00.000Z,0,
 acceleration,2021-10-24T23:00:00.000Z,0,
@@ -5826,7 +5826,7 @@ acceleration,2021-10-27T16:00:00.000Z,25,1
 acceleration,2021-10-27T17:00:00.000Z,28,1
 acceleration,2021-10-27T18:00:00.000Z,28,1
 acceleration,2021-10-27T19:00:00.000Z,28,1
-acceleration,2021-10-27T20:00:00.000Z,0,
+acceleration,2021-10-27T20:00:00.000Z,0,1
 acceleration,2021-10-27T21:00:00.000Z,0,
 acceleration,2021-10-27T22:00:00.000Z,0,
 acceleration,2021-10-27T23:00:00.000Z,3,
@@ -5848,7 +5848,7 @@ acceleration,2021-10-28T14:00:00.000Z,0,
 acceleration,2021-10-28T15:00:00.000Z,7,1
 acceleration,2021-10-28T16:00:00.000Z,28,1
 acceleration,2021-10-28T17:00:00.000Z,24,1
-acceleration,2021-10-28T18:00:00.000Z,4,
+acceleration,2021-10-28T18:00:00.000Z,4,1
 acceleration,2021-10-28T19:00:00.000Z,0,
 acceleration,2021-10-28T20:00:00.000Z,0,
 acceleration,2021-10-28T21:00:00.000Z,4,
@@ -9826,7 +9826,7 @@ acceleration,2022-04-12T08:00:00.000Z,2,
 acceleration,2022-04-12T09:00:00.000Z,2,
 acceleration,2022-04-12T10:00:00.000Z,1,
 acceleration,2022-04-12T11:00:00.000Z,1,
-acceleration,2022-04-12T12:00:00.000Z,0,
+acceleration,2022-04-12T12:00:00.000Z,0,1
 acceleration,2022-04-12T13:00:00.000Z,5,1
 acceleration,2022-04-12T14:00:00.000Z,30,1
 acceleration,2022-04-12T15:00:00.000Z,30,1
@@ -9861,7 +9861,7 @@ acceleration,2022-04-13T19:00:00.000Z,27,1
 acceleration,2022-04-13T20:00:00.000Z,30,1
 acceleration,2022-04-13T21:00:00.000Z,22,1
 acceleration,2022-04-13T22:00:00.000Z,9,1
-acceleration,2022-04-13T23:00:00.000Z,0,
+acceleration,2022-04-13T23:00:00.000Z,0,1
 acceleration,2022-04-14T00:00:00.000Z,1,
 acceleration,2022-04-14T01:00:00.000Z,1,
 acceleration,2022-04-14T02:00:00.000Z,1,
@@ -9906,7 +9906,7 @@ acceleration,2022-04-15T16:00:00.000Z,0,
 acceleration,2022-04-15T17:00:00.000Z,0,
 acceleration,2022-04-15T18:00:00.000Z,9,1
 acceleration,2022-04-15T19:00:00.000Z,5,1
-acceleration,2022-04-15T20:00:00.000Z,0,
+acceleration,2022-04-15T20:00:00.000Z,0,1
 acceleration,2022-04-15T21:00:00.000Z,0,
 acceleration,2022-04-15T22:00:00.000Z,0,
 acceleration,2022-04-15T23:00:00.000Z,3,
@@ -9978,7 +9978,7 @@ acceleration,2022-04-18T16:00:00.000Z,26,1
 acceleration,2022-04-18T17:00:00.000Z,25,1
 acceleration,2022-04-18T18:00:00.000Z,23,1
 acceleration,2022-04-18T19:00:00.000Z,16,1
-acceleration,2022-04-18T20:00:00.000Z,0,
+acceleration,2022-04-18T20:00:00.000Z,0,1
 acceleration,2022-04-18T21:00:00.000Z,0,
 acceleration,2022-04-18T22:00:00.000Z,1,
 acceleration,2022-04-18T23:00:00.000Z,0,
@@ -10002,7 +10002,7 @@ acceleration,2022-04-19T16:00:00.000Z,0,
 acceleration,2022-04-19T17:00:00.000Z,17,1
 acceleration,2022-04-19T18:00:00.000Z,22,1
 acceleration,2022-04-19T19:00:00.000Z,23,1
-acceleration,2022-04-19T20:00:00.000Z,3,
+acceleration,2022-04-19T20:00:00.000Z,3,1
 acceleration,2022-04-19T21:00:00.000Z,0,
 acceleration,2022-04-19T22:00:00.000Z,1,
 acceleration,2022-04-19T23:00:00.000Z,7,
@@ -10024,7 +10024,7 @@ acceleration,2022-04-20T14:00:00.000Z,0,
 acceleration,2022-04-20T15:00:00.000Z,17,1
 acceleration,2022-04-20T16:00:00.000Z,16,1
 acceleration,2022-04-20T17:00:00.000Z,13,1
-acceleration,2022-04-20T18:00:00.000Z,0,
+acceleration,2022-04-20T18:00:00.000Z,0,1
 acceleration,2022-04-20T19:00:00.000Z,0,
 acceleration,2022-04-20T20:00:00.000Z,0,
 acceleration,2022-04-20T21:00:00.000Z,0,
@@ -10171,7 +10171,7 @@ acceleration,2022-04-26T17:00:00.000Z,30,1
 acceleration,2022-04-26T18:00:00.000Z,28,1
 acceleration,2022-04-26T19:00:00.000Z,22,1
 acceleration,2022-04-26T20:00:00.000Z,8,1
-acceleration,2022-04-26T21:00:00.000Z,0,
+acceleration,2022-04-26T21:00:00.000Z,0,1
 acceleration,2022-04-26T22:00:00.000Z,1,
 acceleration,2022-04-26T23:00:00.000Z,0,
 acceleration,2022-04-27T00:00:00.000Z,3,
@@ -10188,8 +10188,8 @@ acceleration,2022-04-27T10:00:00.000Z,0,
 acceleration,2022-04-27T11:00:00.000Z,1,
 acceleration,2022-04-27T12:00:00.000Z,0,
 acceleration,2022-04-27T13:00:00.000Z,1,
-acceleration,2022-04-27T14:00:00.000Z,14,1
-acceleration,2022-04-27T15:00:00.000Z,0,1
+acceleration,2022-04-27T14:00:00.000Z,14,
+acceleration,2022-04-27T15:00:00.000Z,0,
 acceleration,2022-04-27T16:00:00.000Z,0,1
 acceleration,2022-04-27T17:00:00.000Z,0,1
 acceleration,2022-04-27T18:00:00.000Z,9,1
@@ -10316,7 +10316,7 @@ acceleration,2022-05-02T18:00:00.000Z,26,1
 acceleration,2022-05-02T19:00:00.000Z,25,1
 acceleration,2022-05-02T20:00:00.000Z,22,1
 acceleration,2022-05-02T21:00:00.000Z,19,1
-acceleration,2022-05-02T22:00:00.000Z,6,
+acceleration,2022-05-02T22:00:00.000Z,6,1
 acceleration,2022-05-02T23:00:00.000Z,4,
 acceleration,2022-05-03T00:00:00.000Z,3,
 acceleration,2022-05-03T01:00:00.000Z,0,
@@ -10386,9 +10386,9 @@ acceleration,2022-05-05T16:00:00.000Z,26,1
 acceleration,2022-05-05T17:00:00.000Z,4,1
 acceleration,2022-05-05T18:00:00.000Z,0,1
 acceleration,2022-05-05T19:00:00.000Z,8,1
-acceleration,2022-05-05T20:00:00.000Z,0,1
-acceleration,2022-05-05T21:00:00.000Z,0,1
-acceleration,2022-05-05T22:00:00.000Z,7,1
+acceleration,2022-05-05T20:00:00.000Z,0,
+acceleration,2022-05-05T21:00:00.000Z,0,
+acceleration,2022-05-05T22:00:00.000Z,7,
 acceleration,2022-05-05T23:00:00.000Z,1,
 acceleration,2022-05-06T00:00:00.000Z,2,
 acceleration,2022-05-06T01:00:00.000Z,3,
@@ -10594,7 +10594,7 @@ acceleration,2022-05-14T08:00:00.000Z,1,
 acceleration,2022-05-14T09:00:00.000Z,2,
 acceleration,2022-05-14T10:00:00.000Z,1,
 acceleration,2022-05-14T11:00:00.000Z,2,
-acceleration,2022-05-14T12:00:00.000Z,1,
+acceleration,2022-05-14T12:00:00.000Z,1,1
 acceleration,2022-05-14T13:00:00.000Z,23,1
 acceleration,2022-05-14T14:00:00.000Z,28,1
 acceleration,2022-05-14T15:00:00.000Z,26,1
@@ -10629,7 +10629,7 @@ acceleration,2022-05-15T19:00:00.000Z,0,
 acceleration,2022-05-15T20:00:00.000Z,0,
 acceleration,2022-05-15T21:00:00.000Z,1,1
 acceleration,2022-05-15T22:00:00.000Z,2,1
-acceleration,2022-05-15T23:00:00.000Z,2,1
+acceleration,2022-05-15T23:00:00.000Z,2,
 acceleration,2022-05-16T00:00:00.000Z,1,
 acceleration,2022-05-16T01:00:00.000Z,2,
 acceleration,2022-05-16T02:00:00.000Z,0,
@@ -10647,7 +10647,7 @@ acceleration,2022-05-16T13:00:00.000Z,19,1
 acceleration,2022-05-16T14:00:00.000Z,28,1
 acceleration,2022-05-16T15:00:00.000Z,24,1
 acceleration,2022-05-16T16:00:00.000Z,11,1
-acceleration,2022-05-16T17:00:00.000Z,0,
+acceleration,2022-05-16T17:00:00.000Z,0,1
 acceleration,2022-05-16T18:00:00.000Z,0,
 acceleration,2022-05-16T19:00:00.000Z,0,
 acceleration,2022-05-16T20:00:00.000Z,0,
@@ -10676,7 +10676,7 @@ acceleration,2022-05-17T18:00:00.000Z,26,1
 acceleration,2022-05-17T19:00:00.000Z,29,1
 acceleration,2022-05-17T20:00:00.000Z,28,1
 acceleration,2022-05-17T21:00:00.000Z,16,1
-acceleration,2022-05-17T22:00:00.000Z,5,
+acceleration,2022-05-17T22:00:00.000Z,5,1
 acceleration,2022-05-17T23:00:00.000Z,2,
 acceleration,2022-05-18T00:00:00.000Z,4,
 acceleration,2022-05-18T01:00:00.000Z,0,
@@ -10690,7 +10690,7 @@ acceleration,2022-05-18T08:00:00.000Z,0,
 acceleration,2022-05-18T09:00:00.000Z,0,
 acceleration,2022-05-18T10:00:00.000Z,0,
 acceleration,2022-05-18T11:00:00.000Z,2,
-acceleration,2022-05-18T12:00:00.000Z,0,
+acceleration,2022-05-18T12:00:00.000Z,0,1
 acceleration,2022-05-18T13:00:00.000Z,9,1
 acceleration,2022-05-18T14:00:00.000Z,29,1
 acceleration,2022-05-18T15:00:00.000Z,27,1
@@ -10748,7 +10748,7 @@ acceleration,2022-05-20T18:00:00.000Z,25,1
 acceleration,2022-05-20T19:00:00.000Z,28,1
 acceleration,2022-05-20T20:00:00.000Z,29,1
 acceleration,2022-05-20T21:00:00.000Z,12,1
-acceleration,2022-05-20T22:00:00.000Z,4,
+acceleration,2022-05-20T22:00:00.000Z,4,1
 acceleration,2022-05-20T23:00:00.000Z,4,
 acceleration,2022-05-21T00:00:00.000Z,5,
 acceleration,2022-05-21T01:00:00.000Z,1,
@@ -10795,7 +10795,7 @@ acceleration,2022-05-22T17:00:00.000Z,27,1
 acceleration,2022-05-22T18:00:00.000Z,26,1
 acceleration,2022-05-22T19:00:00.000Z,25,1
 acceleration,2022-05-22T20:00:00.000Z,9,1
-acceleration,2022-05-22T21:00:00.000Z,2,
+acceleration,2022-05-22T21:00:00.000Z,2,1
 acceleration,2022-05-22T22:00:00.000Z,4,
 acceleration,2022-05-22T23:00:00.000Z,1,
 acceleration,2022-05-23T00:00:00.000Z,3,
@@ -10819,7 +10819,7 @@ acceleration,2022-05-23T17:00:00.000Z,26,1
 acceleration,2022-05-23T18:00:00.000Z,26,1
 acceleration,2022-05-23T19:00:00.000Z,28,1
 acceleration,2022-05-23T20:00:00.000Z,20,1
-acceleration,2022-05-23T21:00:00.000Z,1,
+acceleration,2022-05-23T21:00:00.000Z,1,1
 acceleration,2022-05-23T22:00:00.000Z,0,
 acceleration,2022-05-23T23:00:00.000Z,0,
 acceleration,2022-05-24T00:00:00.000Z,0,
@@ -10843,7 +10843,7 @@ acceleration,2022-05-24T17:00:00.000Z,29,1
 acceleration,2022-05-24T18:00:00.000Z,25,1
 acceleration,2022-05-24T19:00:00.000Z,27,1
 acceleration,2022-05-24T20:00:00.000Z,21,1
-acceleration,2022-05-24T21:00:00.000Z,5,
+acceleration,2022-05-24T21:00:00.000Z,5,1
 acceleration,2022-05-24T22:00:00.000Z,7,
 acceleration,2022-05-24T23:00:00.000Z,3,
 acceleration,2022-05-25T00:00:00.000Z,4,
@@ -10892,7 +10892,7 @@ acceleration,2022-05-26T18:00:00.000Z,29,1
 acceleration,2022-05-26T19:00:00.000Z,26,1
 acceleration,2022-05-26T20:00:00.000Z,26,1
 acceleration,2022-05-26T21:00:00.000Z,13,1
-acceleration,2022-05-26T22:00:00.000Z,4,
+acceleration,2022-05-26T22:00:00.000Z,4,1
 acceleration,2022-05-26T23:00:00.000Z,5,
 acceleration,2022-05-27T00:00:00.000Z,5,
 acceleration,2022-05-27T01:00:00.000Z,1,
@@ -10914,7 +10914,7 @@ acceleration,2022-05-27T16:00:00.000Z,4,1
 acceleration,2022-05-27T17:00:00.000Z,27,1
 acceleration,2022-05-27T18:00:00.000Z,26,1
 acceleration,2022-05-27T19:00:00.000Z,28,1
-acceleration,2022-05-27T20:00:00.000Z,5,
+acceleration,2022-05-27T20:00:00.000Z,5,1
 acceleration,2022-05-27T21:00:00.000Z,2,
 acceleration,2022-05-27T22:00:00.000Z,1,
 acceleration,2022-05-27T23:00:00.000Z,3,
@@ -10937,7 +10937,7 @@ acceleration,2022-05-28T15:00:00.000Z,0,
 acceleration,2022-05-28T16:00:00.000Z,0,
 acceleration,2022-05-28T17:00:00.000Z,22,1
 acceleration,2022-05-28T18:00:00.000Z,20,1
-acceleration,2022-05-28T19:00:00.000Z,0,
+acceleration,2022-05-28T19:00:00.000Z,0,1
 acceleration,2022-05-28T20:00:00.000Z,3,
 acceleration,2022-05-28T21:00:00.000Z,4,
 acceleration,2022-05-28T22:00:00.000Z,2,
