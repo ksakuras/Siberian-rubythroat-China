@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17542294.svg)](https://doi.org/10.5281/zenodo.17542294)
+
 ## Project description
 
 - Year: 2020 - 2024
@@ -12,7 +14,7 @@
 
 Datapackage:
 
-> Zhao T, Nussbaumer R (2025). “GeoLocator Data Package: Siberian Rubythroat from China.” <https://doi.org/110.5281/zenodo.17542294>
+> Zhao T, Nussbaumer R (2025). “GeoLocator Data Package: Siberian Rubythroat from China.” <https://doi.org/10.5281/zenodo.17542294>
 
 Associated publication:
 > Zhao, T., Heim, W., Nussbaumer, R. et al. Seasonal migration patterns of Siberian Rubythroat (Calliope calliope) facing the Qinghai–Tibet Plateau. Mov Ecol 12, 54 (2024). <https://doi.org/10.1186/s40462-024-00495-5<
