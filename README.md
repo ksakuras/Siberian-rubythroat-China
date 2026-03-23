@@ -1,36 +1,28 @@
-Siberian rubythroat pressure analysis
+## Project description
 
-LOGGER TYPE: CAnMove multi-sensor loggers (developed by CAnMove lab from Biology department, Lund University)
+- Year: 2020 - 2024
+- Location: Datong, Qinghai, China
+- Deployment: 31 PinPoint-10 GPS + 13 light-level geolocator (2020); 20 CAnMove logger (2021); 12 PinPoint-10 GPS (2022); 9 MigrateTech multi-sensor logger (2023)
+- Main collaborating parties: CAnMove lab, Lund University (logger supplier); Zoology Institute of China, Chinese Academy of Science, China (fieldwork arrangements); Swiss Ornithology Institute (data analysis); University of Groningen (PhD basis)
+- Other tracked sympatric species: Yellow-streaked Warbler (_Phylloscopus armandii_), Siberian Stonechat (_Saxicola maurus przewalskii_), Black-faced Bunting (_Emberiza spodocephala_)
 
-DATA TYPE: 
+<img width="900" alt="image" src="https://github.com/user-attachments/assets/db23dc57-66e4-4a4b-b5cf-571890bd15fd" />
 
-- Barometric data and temperature data (per hour, Aug 15 - Nov 20, 2021, Mar 15 - May 20, 2022)
-- Accelerometric data (per hour, Aug 15, 2021 - May 20, 2022)
-- Light-level data (per 5 min, Dec 21 - 31, 2021)
+## How to use
 
-SPECIES: Siberian rubythroat (Calliope calliope)
+Datapackage:
 
-LOCATIONS: 1. Datong county, Qinghai, China; 2. Mirnoye, Russia
+> Zhao T, Nussbaumer R (2025). “GeoLocator Data Package: Siberian Rubythroat from China.” <https://doi.org/110.5281/zenodo.17542294>
 
-PERIOD: 2021 (deployment) to 2022 (re-collection)
+Associated publication:
+> Zhao, T., Heim, W., Nussbaumer, R. et al. Seasonal migration patterns of Siberian Rubythroat (Calliope calliope) facing the Qinghai–Tibet Plateau. Mov Ecol 12, 54 (2024). <https://doi.org/10.1186/s40462-024-00495-5<
 
-DESCRIPTION: 
+## Data
 
-# before analysis, open the "preparation" script and load all the libraries
-# All Qinghai data should be able to run from 99-combined, and simply change the gdl <- "LOGGERNAME"
-# Prior to the analysis, a quick Visualizing of final results (pressure, static and wind) can be run; if not finishing the analysis, you won't have anything to load here, just skip 
-# If you run independent R files by steps, in 1-Pressure please run from beginning to enable to trainset_read() function, as it requires a pre-defined pam file and a .csv file for the logger you are running the analysis
-# PLEASE beaware that 56C dataset only contains autumn data, and it no longer has the winter gap of pressure. Thus, in 5-2_windgraph_create section, please unmask those that labels with "56C only" and not run those 
+- **Temporal**: "2021-08-15" to "2022-06-05"
+- **Taxonomic**: "Calliope calliope"
+- **Number of tags**: 6
+- **Sensors**: light (only a few days), pressure and activity.
 
 
-
-
-
-# For new data:
-# 1. copy pressure, temperature, actoscore (sum and independent) into one sheet
-# 2. a new csv file, adapting the pressure, temp, actoscore into the trainset format - timestamp use excel format to YYYY-MM-DD"T"HH:MM:SS".000Z
-# 3. use trainset website to process
-# 4. put a copy of the csv file in 0_PAM folder
-# 5. use the code to transform it to be readable, write_trainset()
-# 6. manually copy the label (change them from label_1 to "1") to the auto-generated file, rename as "xx-labeled"
-# 7. read_trainset and continue
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/fc1c029c-0c91-4834-970d-d0696c689513" />

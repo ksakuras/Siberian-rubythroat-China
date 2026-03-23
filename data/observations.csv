@@ -1,0 +1,13 @@
+ring_number,tag_id,observation_type,datetime,latitude,longitude,location_name,device_status,observer,catching_method,age_class,sex,condition,mass,wing_length,additional_metric,observation_comments
+C53-3019,56C,equipment,2021-06-08,37.01987498,101.585549,"Datong, Qinghai",present,Tianhao Zhao,M,6,M,alive,24,77,,
+C53-3019,56C,retrieval,2022-06-06T00:00:00Z,37.01987498,101.585549,"Datong, Qinghai",present,Tianhao Zhao,M,6,M,alive,24,76,,
+C53-3014,5D6,equipment,2021-06-03,37.04525798,101.722533,"Datong, Qinghai",present,Tianhao Zhao,M,6,M,alive,24.5,77,,
+C53-3014,5D6,retrieval,2022-05-30T00:00:00Z,37.04525798,101.722533,"Datong, Qinghai",present,Tianhao Zhao,M,6,M,alive,23.5,76,,
+C53-3030,5D7,equipment,2021-06-15,37.04525798,101.722533,"Datong, Qinghai",present,Tianhao Zhao,M,6,M,alive,23,77,,
+C53-3030,5D7,retrieval,2022-05-29T00:00:00Z,37.04525798,101.722533,"Datong, Qinghai",present,Tianhao Zhao,M,6,M,alive,23.5,78,,
+C53-3013,5D8,equipment,2021-06-03,37.00182899,101.751121,"Datong, Qinghai",present,Tianhao Zhao,M,6,M,alive,24,78,,
+C53-3013,5D8,retrieval,2022-05-29T00:00:00Z,37.00182899,101.751121,"Datong, Qinghai",present,Tianhao Zhao,M,6,M,alive,24.5,78,,
+C53-3012,5E5,equipment,2021-06-03,37.044269,101.725552,"Datong, Qinghai",present,Tianhao Zhao,M,6,M,alive,23.5,77,,
+C53-3012,5E5,retrieval,2022-05-29T00:00:00Z,37.044269,101.725552,"Datong, Qinghai",present,Tianhao Zhao,M,6,M,alive,22.5,76,,
+C53-3023,5E7,equipment,2021-06-09,37.04428903,101.724188,"Datong, Qinghai",present,Tianhao Zhao,M,0,M,alive,22.5,75,,
+C53-3023,5E7,retrieval,2022-05-30T00:00:00Z,37.04428903,101.724188,"Datong, Qinghai",present,Tianhao Zhao,M,6,M,alive,22,75,,
